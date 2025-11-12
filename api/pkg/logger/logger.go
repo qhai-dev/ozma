@@ -2,7 +2,6 @@ package logger
 
 import (
 	"os"
-	"sync"
 	"sync/atomic"
 	"time"
 
@@ -12,17 +11,10 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-var (
-	logger Logger
-	once   sync.Once
-	//verbosity uint32
-)
-
 type Logger struct {
 	log               logr.Logger
-	SetVerbosityLevel func(uint32)
-	GetVerbosityLevel func() uint32
 	Flush             func()
+	SetVerbosityLevel func(uint32)
 }
 
 type runtime struct {
@@ -30,7 +22,6 @@ type runtime struct {
 }
 
 func (r *runtime) ZapV() zapcore.Level {
-	// zapcore.Level
 	return -zapcore.Level(atomic.LoadUint32(&r.v))
 }
 
@@ -42,26 +33,9 @@ func (r *runtime) SetVerbosityLevel(v uint32) {
 	atomic.StoreUint32(&r.v, v)
 }
 
-func (r *runtime) GetVerbosityLevel() uint32 {
-	return atomic.LoadUint32(&r.v)
-}
-
-func InitLog() {
-	once.Do(func() {
-		logger = NewLogger(5)
-	})
-}
-
-func FlushLog() {
-	if logger.log.IsZero() {
-		return
-	}
-	logger.Flush()
-}
-
-func NewLogger(v uint32) Logger {
+func NewLogger(v uint32) *Logger {
 	r := &runtime{
-		v,
+		v: v,
 	}
 
 	encoderConfig := &zapcore.EncoderConfig{
@@ -73,17 +47,17 @@ func NewLogger(v uint32) Logger {
 		},
 		LevelKey: "level",
 		EncodeLevel: func(level zapcore.Level, enc zapcore.PrimitiveArrayEncoder) {
-			// 只设计 ERROR 和 INFO 两种级别日志
-			// INFO 级别日志额外单独用v(n)去区分级别
+			// 只设计 ERROR 和 INFO 两种日志
+			// INFO 级别日志额外单独用v(n)去区分
 			if level == zapcore.ErrorLevel {
 				enc.AppendString(level.CapitalString())
 			} else {
 				enc.AppendString("INFO")
 			}
 		},
-		CallerKey:     "caller",
-		EncodeCaller:  zapcore.ShortCallerEncoder,
-		FunctionKey:   "func",
+		// TODO INFO 日志是否需要 caller
+		//CallerKey:     "caller",
+		//EncodeCaller:  zapcore.ShortCallerEncoder,
 		StacktraceKey: "stack",
 	}
 
@@ -104,40 +78,42 @@ func NewLogger(v uint32) Logger {
 
 	zapLog := zap.New(
 		core,
-		zap.WithCaller(true),
-		zap.AddCallerSkip(1),
+		//zap.WithCaller(true),
+		//zap.AddCallerSkip(1),
 		zap.AddStacktrace(zapcore.ErrorLevel),
 	)
-	return Logger{
+
+	return &Logger{
 		log:               zapr.NewLoggerWithOptions(zapLog, zapr.LogInfoLevel("v"), zapr.ErrorKey("error")),
 		SetVerbosityLevel: r.SetVerbosityLevel,
-		GetVerbosityLevel: r.GetVerbosityLevel,
 		Flush: func() {
 			_ = zapLog.Sync()
 		},
 	}
 }
 
-func Info(msg string, keysAndValues ...any) {
-	logger.log.Info(msg, keysAndValues...)
+func (l *Logger) Info(msg string, keysAndValues ...any) {
+	l.log.Info(msg, keysAndValues...)
 }
 
-func Error(err error, msg string, keysAndValues ...any) {
-	logger.log.Error(err, msg, keysAndValues...)
+func (l *Logger) Error(err error, msg string, keysAndValues ...any) {
+	l.log.Error(err, msg, keysAndValues...)
 }
 
-func V(v int) logr.Logger {
-	return logger.log.V(v)
+func (l *Logger) Fatal(err error, msg string, keysAndValues ...any) {
+	defer l.Flush()
+	l.log.Error(err, msg, keysAndValues...)
+	os.Exit(1)
 }
 
-func SetVerbosityLevel(v uint32) {
-	logger.SetVerbosityLevel(v)
+func (l *Logger) V(v int) logr.Logger {
+	return l.log.V(v)
 }
 
-func GetVerbosityLevel() uint32 {
-	return logger.GetVerbosityLevel()
+func (l *Logger) FlushLog() {
+	l.Flush()
 }
 
-func WithName(name string) {
-	logger.log = logger.log.WithName(name)
+func (l *Logger) SetLevel(v uint32) {
+	l.SetVerbosityLevel(v)
 }

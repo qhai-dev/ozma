@@ -1,0 +1,22 @@
+{
+  "Login": {
+    "title": "Hey, let's get started!",
+    "welcome": "👋 Welcome! Please log in to get started.",
+    "account": "Account",
+    "placeholder-account": "Your email/account/mobile number",
+    "error-account": "Please enter your email/account/mobile number",
+    "password": "Password",
+    "placeholder-password": "Your password",
+    "error-password": "Please enter your password",
+    "login": "Log in",
+    "select-identity-title": "Choose an account",
+    "select-identity-desc": "Linked to {count} accounts. Choose one"
+  },
+  "metadata": {
+    "login": "account log in",
+    "dashboard": "dashboard"
+  },
+  "common": {
+    "back": "Back"
+  }
+}
