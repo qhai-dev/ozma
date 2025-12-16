@@ -1,0 +1,22 @@
+{
+  "Login": {
+    "title": "嗨，近来可好",
+    "welcome": "👋 欢迎！请登录以开始使用。",
+    "account": "账号",
+    "placeholder-account": "输入电子邮箱/账号/手机号",
+    "error-account": "请输入电子邮箱/账号/手机号",
+    "password": "密码",
+    "placeholder-password": "输入密码",
+    "error-password": "请输入密码",
+    "login": "登 录",
+    "select-identity-title": "选择你加入的组织",
+    "select-identity-desc": "以下为你已加入的组织"
+  },
+  "metadata": {
+    "login": "账号登录",
+    "dashboard": "工作台"
+  },
+  "common": {
+    "back": "返回"
+  }
+}
