@@ -1,12 +1,9 @@
 
 lint:
-	@echo golangci lint
-
-gorm_gen: 
-	go run ./tools/gorm_gen/generate.go
+	@echo "格式化代码..."
 
 run:
-	go run ./modules/admin/main.go
+	@echo "开始启动所有服务..."
 
-grpc_gen:
-	buf generate
+build:
+	@echo "开始构建所有服务..."

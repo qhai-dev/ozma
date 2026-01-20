@@ -1,11 +1,9 @@
-# ozma backend micro server
+# ozma backend
 
 
 
 同步 第三方 OA 用户/组织架构
-1. 钉钉
-2. 企业微信
-3. 飞书
+1. 飞书 TODO
 
 
 
@@ -22,11 +20,10 @@
 3.1 用户详情 -> table user_profile
 3.2 偏好设置 -> table user_setting
 
-### admin
+# enterprise
 
 - 支持同步 钉钉/飞书/企业微信 用户体系
 - 基于 Casbin 实现 RBAC / ABAC 权限体系
-- 支持创建多组织架构
 
 
 /**
