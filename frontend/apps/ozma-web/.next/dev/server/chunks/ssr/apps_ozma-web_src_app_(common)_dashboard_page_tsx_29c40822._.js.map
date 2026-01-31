@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/ozma/frontend/apps/ozma-web/src/app/%28common%29/dashboard/page.tsx"],"sourcesContent":["import type { Metadata, ResolvingMetadata } from 'next';\nimport { getTranslations } from 'next-intl/server';\n\nexport async function generateMetadata(parent: ResolvingMetadata): Promise<Metadata> {\n  const t = await getTranslations('metadata');\n  return {\n    title: t('dashboard'),\n  };\n}\n\nexport default function Page() {\n  return <div className='h-full w-full p-5'>工作台 页面</div>;\n}\n"],"names":[],"mappings":";;;;;;;AACA;;;AAEO,eAAe,iBAAiB,MAAyB;IAC9D,MAAM,IAAI,MAAM,IAAA,geAAe,EAAC;IAChC,OAAO;QACL,OAAO,EAAE;IACX;AACF;AAEe,SAAS;IACtB,qBAAO,ubAAC;QAAI,WAAU;kBAAoB;;;;;;AAC5C"}}]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@ozma/frontend",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "turbo run dev"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "devDependencies": {
+    "turbo": "^2.7.6"
+  }
+}

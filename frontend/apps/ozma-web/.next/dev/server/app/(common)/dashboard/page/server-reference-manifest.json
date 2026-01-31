@@ -1,0 +1,35 @@
+{
+  "node": {
+    "001dc189559e708a93907abc91dd46610ab78b0aa8": {
+      "workers": {
+        "app/(common)/dashboard/page": {
+          "moduleId": "[project]/apps/ozma-web/.next-internal/server/app/(common)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/apps/ozma-web/src/i18n/server.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "getUserLocale",
+          "filename": "apps/ozma-web/src/i18n/server.ts"
+        }
+      },
+      "layer": {
+        "app/(common)/dashboard/page": "rsc"
+      },
+      "exportedName": "getUserLocale",
+      "filename": "apps/ozma-web/src/i18n/server.ts"
+    },
+    "406e76047e667d1b8b651509ba0883787deff4b87f": {
+      "workers": {
+        "app/(common)/dashboard/page": {
+          "moduleId": "[project]/apps/ozma-web/.next-internal/server/app/(common)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/apps/ozma-web/src/i18n/server.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "setUserLocale",
+          "filename": "apps/ozma-web/src/i18n/server.ts"
+        }
+      },
+      "layer": {
+        "app/(common)/dashboard/page": "rsc"
+      },
+      "exportedName": "setUserLocale",
+      "filename": "apps/ozma-web/src/i18n/server.ts"
+    }
+  },
+  "edge": {}
+}

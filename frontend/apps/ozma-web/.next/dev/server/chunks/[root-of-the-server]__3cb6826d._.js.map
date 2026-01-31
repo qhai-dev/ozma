@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/ozma/frontend/apps/ozma-web/src/proxy.ts"],"sourcesContent":["import { cookies } from 'next/headers';\nimport { NextRequest, NextResponse } from 'next/server';\n\nexport async function proxy(request: NextRequest) {\n  const cookie = await cookies();\n  const session = cookie.get('session');\n\n  if (!session) {\n    // TODO\n  }\n\n  return NextResponse.next();\n}\n\nexport const config = {\n  matcher: '/((?!api|trpc|_next|_vercel|.*\\\\..*).*)',\n};\n"],"names":[],"mappings":";;;;;;AAAA;AACA;;;AAEO,eAAe,MAAM,OAAoB;IAC9C,MAAM,SAAS,MAAM,IAAA,mVAAO;IAC5B,MAAM,UAAU,OAAO,GAAG,CAAC;IAE3B,IAAI,CAAC,SAAS;IACZ,OAAO;IACT;IAEA,OAAO,uVAAY,CAAC,IAAI;AAC1B;AAEO,MAAM,SAAS;IACpB,SAAS;AACX"}}]
+}
