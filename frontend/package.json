@@ -1,11 +1,29 @@
 {
   "name": "@ozma/frontend",
   "version": "0.1.0",
+  "private": true,
+  "description": "构建下一代 AI 驱动的企业级中后台系统",
+  "workspaces": [
+    "semi-design-plus",
+    "semi-design-pro"
+  ],
   "scripts": {
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "fmt": "oxfmt --write",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint --write",
+    "lint:check": "oxlint --check"
   },
-  "packageManager": "pnpm@10.28.0",
   "devDependencies": {
-    "turbo": "^2.7.6"
-  }
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.42.0",
+    "turbo": "^2.8.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264"
 }

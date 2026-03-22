@@ -1,0 +1,5 @@
+package dingtalk
+
+func NewClient() {
+
+}

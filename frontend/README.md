@@ -6,16 +6,20 @@
 
 环境要求：
 
-* Node.js 20+ (推荐lts版本)
-* pnpm 10.29.1
-* turbo 2.7.6
+- Node.js 20+ (推荐lts版本)
+- pnpm 10.29.1
+- turbo 2.8.1
 
 ### 1. 安装Node.js 20+
 
 ```bash
-    fnm install lts
+    fnm install 20
 
-    fnm 
+    node -v
+
+    corepack enable pnpm
+
+    pnpm -v
 ```
 
 ### 2. 检出 Git 仓库并切换到 `frontend` 目录
@@ -29,6 +33,17 @@
 ```
 
 ### 3. 安装全局依赖
+
 ```bash
-    pnpm add turbo@2.7.6 --global
+    pnpm add turbo@2.8.1 --global
+```
+
+### 4. 开发模式
+
+```bash
+    # 安装依赖
+    pnpm install
+
+    # 启动 web development 服务
+    turbo run dev --filter=@ozma-web
 ```

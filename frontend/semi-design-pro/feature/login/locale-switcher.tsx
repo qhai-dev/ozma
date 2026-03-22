@@ -1,0 +1,52 @@
+"use client";
+
+import { useLocale } from "next-intl";
+import {
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  Globe,
+} from "semi-design-plus";
+
+import { languages, Locale, locales } from "@/i18n/language";
+
+type Props = {
+  action: (locale: Locale) => Promise<void>;
+};
+
+export function LocaleSwitcher({ action }: Props) {
+  const locale = useLocale();
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <div className="flex w-56 items-center justify-end">
+          <Button
+            theme="outline"
+            className="text-text-primary border-highlight-1 hover:bg-hover-0 flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-[13px] font-medium"
+          >
+            <Globe size={20} />
+            {languages[locale].name}
+          </Button>
+        </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        sideOffset={8}
+        align="end"
+        className="border-highlight-2 bg-panel-bg box-border max-h-96 w-50 overflow-y-auto rounded-xl border-[0.5px] p-1 shadow-lg"
+      >
+        {locales.map((item, index) => (
+          <DropdownMenuItem
+            className="text-secondary hover:bg-state-hove rounded-lg px-3 py-2 text-sm"
+            key={index}
+            onClick={() => action(item)}
+          >
+            {languages[item].name}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
