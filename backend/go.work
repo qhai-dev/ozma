@@ -1,9 +1,7 @@
 go 1.26.1
 
 use (
-	.
-	./src/api
-	./src/apiserver
-	./src/component
-	./src/kakactl
+	./api
+	./app/service/account
+	./library
 )
