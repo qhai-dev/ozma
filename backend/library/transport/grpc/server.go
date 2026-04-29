@@ -1,92 +1,92 @@
 package grpc
 
-import (
-	"context"
-	"net"
+// type serverOptions
 
-	"google.golang.org/grpc"
-)
+// type ServerOptions func(*Server)
 
-type ServerOptions func(*Server)
+// type Server struct {
+// 	grpcSrv  *grpc.Server
+// 	grpcOpts *grpc.ServerOption
 
-type Server struct {
-	grpcSrv          *grpc.Server
-	network          string
-	address          string
-	lis              net.Listener
-	context          context.Context
-	middleware       []grpc.UnaryServerInterceptor
-	streamMiddleware []grpc.StreamServerInterceptor
-}
+// 	network string
+// 	address string
+// 	lis     net.Listener
+// 	context context.Context
 
-func Network(network string) ServerOptions {
-	return func(s *Server) {
-		s.network = network
-	}
-}
+// 	middleware       []grpc.UnaryServerInterceptor
+// 	streamMiddleware []grpc.StreamServerInterceptor
+// }
 
-func Address(address string) ServerOptions {
-	return func(s *Server) {
-		s.address = address
-	}
-}
+// func Network(network string) ServerOptions {
+// 	return func(s *Server) {
+// 		s.network = network
+// 	}
+// }
 
-func Middleware(in ...grpc.UnaryServerInterceptor) ServerOptions {
-	return func(s *Server) {
-		// s.middleware = in
-		// s.unaryMiddleware = in
-	}
-}
+// func Address(address string) ServerOptions {
+// 	return func(s *Server) {
+// 		s.address = address
+// 	}
+// }
 
-func StreamMiddleware(in ...grpc.StreamServerInterceptor) ServerOptions {
-	return func(s *Server) {
-		s.streamMiddleware = in
-	}
-}
+// func Middleware(in ...grpc.UnaryServerInterceptor) ServerOptions {
+// 	return func(s *Server) {
+// 		// s.middleware = in
+// 		// s.unaryMiddleware = in
+// 	}
+// }
 
-func NewServer(opts ...ServerOptions) *Server {
-	srv := &Server{
-		network: "tcp",
-		address: ":0",
-		context: context.Background(),
-	}
+// func StreamMiddleware(in ...grpc.StreamServerInterceptor) ServerOptions {
+// 	return func(s *Server) {
+// 		s.streamMiddleware = in
+// 	}
+// }
 
-	for _, o := range opts {
-		o(srv)
-	}
+// var defaultServerOptions = Server{
+// 	network: "tcp",
+// 	address: ":0",
+// 	context: context.Background(),
+// }
 
-	grpcOpts := []grpc.ServerOption{
-		grpc.ChainUnaryInterceptor(srv.middleware...),
-		grpc.ChainStreamInterceptor(srv.streamMiddleware...),
-	}
+// func NewServer(opt ...ServerOptions) *Server {
+// 	opts := defaultServerOptions
 
-	srv.grpcSrv = grpc.NewServer(grpcOpts...)
+// 	for _, o := range opt {
+// 		o(&opts)
+// 	}
 
-	return srv
-}
+// 	// grpcOpts := []grpc.ServerOption{
+// 	// 	grpc.ChainUnaryInterceptor(srv.middleware...),
+// 	// 	grpc.ChainStreamInterceptor(srv.streamMiddleware...),
+// 	// }
 
-func (s *Server) Listen() error {
-	lis, err := net.Listen(s.network, s.address)
-	if err != nil {
-		return err
-	}
-	s.lis = lis
-	return nil
-}
+// 	// srv.grpcSrv = grpc.NewServer(grpcOpts...)
 
-func (s *Server) Server(ctx context.Context) error {
-	if err := s.Listen(); err != nil {
-		return err
-	}
+// 	return &opts
+// }
 
-	err := s.grpcSrv.Serve(s.lis)
-	if err != nil {
-		return err
-	}
+// func (s *Server) Listen() error {
+// 	lis, err := net.Listen(s.network, s.address)
+// 	if err != nil {
+// 		return err
+// 	}
+// 	s.lis = lis
+// 	return nil
+// }
 
-	return nil
-}
+// func (s *Server) Server(ctx context.Context) error {
+// 	if err := s.Listen(); err != nil {
+// 		return err
+// 	}
 
-func (s *Server) Shutdown(ctx context.Context) error {
-	return nil
-}
+// 	err := s.grpcSrv.Serve(s.lis)
+// 	if err != nil {
+// 		return err
+// 	}
+
+// 	return nil
+// }
+
+// func (s *Server) Shutdown(ctx context.Context) error {
+// 	return nil
+// }

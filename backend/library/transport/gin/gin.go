@@ -1,4 +1,4 @@
-package ginx
+package gin
 
 import (
 	"context"

@@ -5,9 +5,9 @@ package main
 
 import (
 	"github.com/google/wire"
-	"github.com/qhai-dev/kubun/service/account/application"
-	"github.com/qhai-dev/kubun/service/account/infra"
-	"github.com/qhai-dev/kubun/service/account/rpc"
+	"github.com/qhai-dev/galio/rpc/account/application"
+	"github.com/qhai-dev/galio/rpc/account/infra"
+	"github.com/qhai-dev/galio/rpc/account/rpc"
 )
 
 func InitializeApp() {

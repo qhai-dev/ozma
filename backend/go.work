@@ -1,7 +1,8 @@
 go 1.26.1
 
 use (
-	./api
-	./app/service/account
+	./apis
+	./app/apiserver/account
+	./app/rpc/account
 	./library
 )
