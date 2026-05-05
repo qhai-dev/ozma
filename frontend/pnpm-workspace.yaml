@@ -1,3 +1,3 @@
 packages:
-  - "semi-design-plus"
-  - "semi-design-pro"
+  - "app/*"
+  - "library/*"

@@ -1,0 +1,6 @@
+application:
+  name: rpc.service.account
+  port: 8080
+etcd:
+  hosts:
+    - 14.103.230.114:2379

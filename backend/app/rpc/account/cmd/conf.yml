@@ -1,0 +1,21 @@
+apiVersion: 1.0.0
+kind: rpc
+metadata:
+  name: account
+  labels:
+    environment: Production
+spec:
+  selector:
+    matchLabels:
+      environment: Production
+  environments:
+    - name: Production
+      postgresql:
+        host: 14.103.230.144
+        port: 5432
+        user: postgres
+        password: qwer1234
+        database: account_db
+      redis:
+        host: 14.103.230.114
+        port: 2379

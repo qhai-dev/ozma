@@ -3,6 +3,9 @@
 # dependencies
 node_modules
 
+# astro
+.astro
+
 # turbo
 .turbo
 

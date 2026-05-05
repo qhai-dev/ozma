@@ -1,0 +1,3 @@
+package etcd
+
+// etcd configuration

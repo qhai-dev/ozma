@@ -1,0 +1,5 @@
+package galio
+
+func NewRestServer() {
+	//
+}
