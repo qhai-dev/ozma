@@ -1,0 +1,6 @@
+packages:
+  - "docs"
+  - "frontend/app/*"
+  - "frontend/library/*"
+
+onlyBuiltDependencies: []

@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   Globe,
-} from "semi-design-plus";
+} from "@galio/design-component";
 
 import { languages, Locale, locales } from "@/i18n/language";
 

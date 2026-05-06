@@ -1,0 +1,4 @@
+node_modules
+docs/node_modules
+frontend/app/admin/node_modules
+frontend/library/design-component/node_modules

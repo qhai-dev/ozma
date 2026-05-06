@@ -17,7 +17,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "semi-design-plus";
+} from "@galio/design-component";
 
 export function NavProjects({
   projects,

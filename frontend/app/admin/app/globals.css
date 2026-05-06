@@ -1,8 +1,7 @@
 @import "tailwindcss";
-@import "semi-design-plus/styles.css";
-/* @import "@xyflow/react/dist/style.css"; */
+@import "@galio/design-component/styles.css";
 
- @source '../node_modules/semi-design-plus';
+@source '../node_modules/@galio/design-component';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -125,8 +124,12 @@
 	--color-mask: var(--mask);
 
 	--color-destructive: var(--destructive);
-	--color-input-primary: var(--input-primary) /* rgb(255 255 255/0) , rgb(16 24 40/0.08) */;
-	--color-input-destructive: var(--input-destructive) /* rgb(255 255 255/0) , rgb(16 24 40/0.08) */;
+	--color-input-primary: var(--input-primary)
+		/* rgb(255 255 255/0) , rgb(16 24 40/0.08) */
+	;
+	--color-input-destructive: var(--input-destructive)
+		/* rgb(255 255 255/0) , rgb(16 24 40/0.08) */
+	;
 	--color-input-placeholder: var(--input-placeholder);
 	--color-accent: var(--accent);
 

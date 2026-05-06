@@ -42,7 +42,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   TooltipProvider,
-} from "semi-design-plus";
+} from "@galio/design-component";
 const data = {
   user: {
     name: "shadcn",
@@ -100,7 +100,6 @@ export default function Layout({ children }: PropsWithChildren) {
   return (
     <TooltipProvider>
       <SidebarProvider className="bg-foreground">
-        {/*<AppSidebar />*/}
         <Sidebar variant="inset">
           <SidebarHeader>
             <SidebarMenu>
@@ -130,7 +129,7 @@ export default function Layout({ children }: PropsWithChildren) {
         </Sidebar>
 
         <SidebarInset className="p-3">
-          <header className="flex h-16 shrink-0 items-center gap-2">
+          {/* <header className="flex h-16 shrink-0 items-center gap-2">
             <div className="flex items-center gap-2 px-4">
               <SidebarTrigger className="-ml-1" />
               <Separator orientation="vertical" className="mr-2 data-[orientation=vertical]:h-4" />
@@ -146,7 +145,7 @@ export default function Layout({ children }: PropsWithChildren) {
                 </BreadcrumbList>
               </Breadcrumb>
             </div>
-          </header>
+          </header> */}
           <div className="flex flex-1 flex-col gap-4 p-4 pt-0 bg-background">{children}</div>
         </SidebarInset>
       </SidebarProvider>

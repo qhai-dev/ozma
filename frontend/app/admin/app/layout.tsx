@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 
-import { NextIntlClientProvider as NextIntlProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
-import { ThemeProvider as NextThemeProvider } from "next-themes";
 import { PropsWithChildren } from "react";
-import { ToastProvider, DirectionProvider } from "semi-design-plus";
+import { ToastProvider, DirectionProvider } from "@galio/design-component";
 import { languages } from "@/i18n/language";
 
-import AppInitializer from "@/components/app-initializer";
 import TanstackQueryProvider from "@/contexts/tanstack-query-context";
+import NextThemeProvider from "@/contexts/next-theme-context";
+import NextIntlProvider from "@/contexts/next-intl-context";
+
+import AppInitializer from "@/components/app-initializer";
 
 import "./globals.css";
 
@@ -30,13 +31,7 @@ export default async function Layout({ children }: PropsWithChildren) {
     <html lang={locale} dir={dir} suppressHydrationWarning className="h-full overflow-hidden">
       <body className="h-full select-auto">
         <NextIntlProvider>
-          <NextThemeProvider
-            defaultTheme="system"
-            attribute="data-theme"
-            enableSystem
-            disableTransitionOnChange
-            enableColorScheme={false}
-          >
+          <NextThemeProvider>
             <TanstackQueryProvider>
               <ToastProvider>
                 <DirectionProvider direction={dir} dir={dir}>

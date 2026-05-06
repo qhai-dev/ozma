@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { Controller, useForm } from "react-hook-form";
-import { Button, Field, FieldError, FieldGroup, FieldLabel, Input } from "semi-design-plus";
+import { Button, Field, FieldError, FieldGroup, FieldLabel, Input } from "@galio/design-component";
 import { z } from "zod";
 
 type Props = {

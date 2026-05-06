@@ -13,7 +13,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "semi-design-plus";
+} from "@galio/design-component";
 
 export function NavMain({
   items,
