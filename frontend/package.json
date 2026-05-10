@@ -5,5 +5,8 @@
     "apis",
     "app/*",
     "library/*"
-  ]
+  ],
+  "devDependencies": {
+    "oxfmt": "^0.48.0"
+  }
 }

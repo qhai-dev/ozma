@@ -42,9 +42,7 @@ export default function Page() {
         <div className="flex w-full grow flex-col items-center justify-center px-6 pb-12 md:px-27">
           <div className="flex w-full flex-col sm:w-100">
             <div className="my-8 flex flex-col items-start gap-2">
-              {/*className="text-typography-0 text-2xl leading-[1.2] font-semibold"*/}
               <Title heading={2}>{t("title")}</Title>
-              {/*className="text-typography-2 text-sm leading-3.5"*/}
               <Text>{t("welcome")}</Text>
             </div>
             <NormalForm action={onFormSubmitAction} />

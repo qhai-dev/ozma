@@ -1,14 +1,14 @@
-export { Button } from "./button";
+export { Button } from "./components/button";
 
-export { toast, ToastProvider } from "./toast";
+export { toast, ToastProvider } from "./components/toast";
 
-export { Title, Text } from "./typography";
+export { Title, Text } from "./components/typography";
 
-export { Space } from "./space";
+export { Space } from "./components/space";
 
-export * from "./dropdown";
+export * from "./components/dropdown";
 
-export { Input } from "./input";
+export { Input } from "./components/input";
 
 export {
   Field,
@@ -21,13 +21,13 @@ export {
   FieldSet,
   FieldContent,
   FieldTitle,
-} from "./form/Field";
+} from "./components/form/Field";
 
 export { Globe } from "./icon";
 
-export { Separator } from "./separator";
+export { Separator } from "./components/separator";
 
-export { DirectionProvider, useDirection } from "./direction";
+export { DirectionProvider, useDirection } from "./components/direction";
 
 export {
   Sidebar,
@@ -54,6 +54,11 @@ export {
   SidebarSeparator,
   SidebarTrigger,
   useSidebar,
-} from "./sidebar";
+} from "./components/sidebar";
 
-export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
+export {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./components/tooltip";
