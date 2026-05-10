@@ -27,13 +27,16 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
+type Direction = "ltr" | "rtl";
+
 export default async function Layout({ children }: PropsWithChildren) {
-	const locale = await getLocale();
-	const { dir } = languages[locale];
+	const lang = await getLocale();
+	// const { dir } = languages[locale];
+	const dir: Direction = "ltr";
 
 	return (
 		<html
-			lang={locale}
+			lang={lang}
 			dir={dir}
 			suppressHydrationWarning
 			className="h-full overflow-hidden"

@@ -28,9 +28,6 @@ importers:
       '@hookform/resolvers':
         specifier: ^5.2.2
         version: 5.2.2(react-hook-form@7.75.0(react@19.2.0))
-      '@phosphor-icons/react':
-        specifier: ^2.1.10
-        version: 2.1.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@tanstack/react-query':
         specifier: ^5.100.9
         version: 5.100.9(react@19.2.0)
@@ -68,8 +65,8 @@ importers:
         specifier: ^7.75.0
         version: 7.75.0(react@19.2.0)
       tailwind-merge:
-        specifier: ^3.5.0
-        version: 3.5.0
+        specifier: ^3.6.0
+        version: 3.6.0
       tw-animate-css:
         specifier: ^1.4.0
         version: 1.4.0
@@ -689,13 +686,6 @@ packages:
   '@parcel/watcher@2.5.6':
     resolution: {integrity: sha512-tmmZ3lQxAe/k/+rNnXQRawJ4NjxO2hqiOLTHvWchtGZULp4RyFeh6aU4XdOYBFe2KE1oShQTv4AblOs2iOrNnQ==}
     engines: {node: '>= 10.0.0'}
-
-  '@phosphor-icons/react@2.1.10':
-    resolution: {integrity: sha512-vt8Tvq8GLjheAZZYa+YG/pW7HDbov8El/MANW8pOAz4eGxrwhnbfrQZq0Cp4q8zBEu8NIhHdnr+r8thnfRSNYA==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: '>= 16.8'
-      react-dom: '>= 16.8'
 
   '@playwright/test@1.59.1':
     resolution: {integrity: sha512-PG6q63nQg5c9rIi4/Z5lR5IVF7yU5MqmKaPOe0HSc0O2cX1fPi96sUQu5j7eo4gKCkB2AnNGoWt7y4/Xx3Kcqg==}
@@ -2147,6 +2137,9 @@ packages:
   tailwind-merge@3.5.0:
     resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
 
+  tailwind-merge@3.6.0:
+    resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
+
   tailwindcss@4.2.4:
     resolution: {integrity: sha512-HhKppgO81FQof5m6TEnuBWCZGgfRAWbaeOaGT00KOy/Pf/j6oUihdvBpA7ltCeAvZpFhW3j0PTclkxsd4IXYDA==}
 
@@ -2611,11 +2604,6 @@ snapshots:
       '@parcel/watcher-win32-arm64': 2.5.6
       '@parcel/watcher-win32-ia32': 2.5.6
       '@parcel/watcher-win32-x64': 2.5.6
-
-  '@phosphor-icons/react@2.1.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
-    dependencies:
-      react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
 
   '@playwright/test@1.59.1':
     dependencies:
@@ -4089,6 +4077,8 @@ snapshots:
       react: 19.2.0
 
   tailwind-merge@3.5.0: {}
+
+  tailwind-merge@3.6.0: {}
 
   tailwindcss@4.2.4: {}
 
