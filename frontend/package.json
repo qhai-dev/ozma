@@ -1,6 +1,9 @@
 {
-	"name": "galio",
-	"private": true,
-	"type": "module",
-	"packageManager": "pnpm@10.15.1"
+  "name": "galio",
+  "private": true,
+  "workspaces": [
+    "apis",
+    "app/*",
+    "library/*"
+  ]
 }
