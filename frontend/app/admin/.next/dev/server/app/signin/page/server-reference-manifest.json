@@ -1,0 +1,35 @@
+{
+  "node": {
+    "0079d1f280051943fd22aca361b7aba913ac764f86": {
+      "workers": {
+        "app/signin/page": {
+          "moduleId": "[project]/frontend/app/admin/.next-internal/server/app/signin/page/actions.js { ACTIONS_MODULE0 => \"[project]/frontend/app/admin/app/signin/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_1",
+          "filename": "frontend/app/admin/app/signin/page.tsx"
+        }
+      },
+      "layer": {
+        "app/signin/page": "rsc"
+      },
+      "exportedName": "$$RSC_SERVER_ACTION_1",
+      "filename": "frontend/app/admin/app/signin/page.tsx"
+    },
+    "4012e2555c3a1eb2e40fa5279c3b4ceee0bcc5a495": {
+      "workers": {
+        "app/signin/page": {
+          "moduleId": "[project]/frontend/app/admin/.next-internal/server/app/signin/page/actions.js { ACTIONS_MODULE0 => \"[project]/frontend/app/admin/app/signin/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "frontend/app/admin/app/signin/page.tsx"
+        }
+      },
+      "layer": {
+        "app/signin/page": "rsc"
+      },
+      "exportedName": "$$RSC_SERVER_ACTION_0",
+      "filename": "frontend/app/admin/app/signin/page.tsx"
+    }
+  },
+  "edge": {}
+}

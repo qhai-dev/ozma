@@ -1,0 +1,8 @@
+[00:00:00.712] Server  LOG      ✓ Ready in 570ms
+[00:00:06.134] Server  ERROR   Each child in a list should have a unique "key" prop.
+
+Check the render method of `SidebarMenu`. It was passed a child from NavMain. See https://react.dev/link/warning-keys for more information.
+[00:00:06.203] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.313] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `SidebarMenu`.  It was passed a child from NavMain.

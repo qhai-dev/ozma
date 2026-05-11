@@ -1,0 +1,1 @@
+self.__INTERCEPTION_ROUTE_REWRITE_MANIFEST="[{\"source\":\"/setting\",\"destination\":\"/(.)setting\",\"has\":[{\"type\":\"header\",\"key\":\"next-url\",\"value\":\"/.*\"}],\"internal\":true,\"regex\":\"^\\\\/setting$\"}]";
